@@ -41,24 +41,28 @@ namespace Arbol_Binario
         }
 
         //Funcion para insertar un nodo en el Arbol
-        public Nodo_Arbol Insertar (int x, Nodo_Arbol t, int Level)
+        public Nodo_Arbol Insertar (int x, Nodo_Arbol t, int Level, int Altura)
         {
             if (t==null)
             {
                 t = new Nodo_Arbol(x, null, null, null);
                 t.nivel = Level;
+                t.altura = Altura;
+
             }
             else if (x<t.info) //Si el valor a insertar es menor que la raiz
             {
                 Level++;
-                t.Izquierdo = Insertar(x, t.Izquierdo, Level);
+                Altura++;
+                t.Izquierdo = Insertar(x, t.Izquierdo, Level, Altura);
 
 
             }
             else if (x > t.info) //Si el valor a insertar es mayor que la raiz
             {
                 Level++;
-                t.Derecho = Insertar(x, t.Derecho, Level);
+                Altura++;
+                t.Derecho = Insertar(x, t.Derecho, Level, Altura);
 
             }
 
@@ -69,10 +73,73 @@ namespace Arbol_Binario
             return t;
         }
 
+        public Nodo_Arbol Insertar2(int x, Nodo_Arbol t, int Level, int Altura)
+        {
+
+            if (x < t.info)
+            {
+
+                if (t.Izquierdo == null)
+                {
+                    t = new Nodo_Arbol(x, null, null, null);
+                  //  t.nivel = Level;
+                  //  t.altura = Altura;
+                }
+
+                else         
+                  //  Level++;
+                  //  Altura++;
+                    t.Izquierdo = Insertar2(x, t.Izquierdo, Level, Altura);
+            }
+
+            else if (x > t.info)
+            {
+                if (t.Derecho == null)
+                {
+                    t = new Nodo_Arbol(x, null, null, null);
+                  //  t.nivel = Level;
+                  //  t.altura = Altura;
+                }
+
+                else
+                Level++;
+                Altura++;
+                t.Derecho = Insertar2(x, t.Derecho, Level, Altura);
+            }
+
+            else 
+            {
+                MessageBox.Show("Dato existente en el arbol", "Error de ingreso");
+            }
+            return t;
+        }
+
         //Funcion para calcular la altura de un nodo en el Arbol
-        private static int Alturas (Nodo_Arbol t)
+        public static int Alturas (Nodo_Arbol t)
         {
             return t == null ? -1 : t.altura;
+        }
+
+        public int alturaABB (ref Nodo_Arbol t, ref int h)
+        {
+            if (t != null)
+            {
+                h = Alturas(t);
+                alturaABB(ref t.Izquierdo, ref h); 
+                alturaABB(ref t.Derecho, ref h);
+            }
+            return h;
+        }
+
+        public int Suma (ref Nodo_Arbol t, ref int s)
+        {
+            if (t != null)
+            {
+                s += t.info;
+                Suma(ref t.Izquierdo, ref s);
+                Suma(ref t.Derecho, ref s);
+            }
+            return s;
         }
 
         //Funcion para eliminar un nodo del Arbol Binario
@@ -212,6 +279,8 @@ namespace Arbol_Binario
                 if (x < t.info)
                 {
                     buscar(x, t.Izquierdo);
+                    MessageBox.Show("Nodo encontrado en el Arbol " + x);
+
                 }
 
                 else
@@ -219,12 +288,40 @@ namespace Arbol_Binario
                     if (x > t.info)
                     {
                         buscar(x, t.Derecho);
+                        MessageBox.Show("Nodo encontrado en el Arbol " + x);
                     }
                 }
             }
 
             else
                 MessageBox.Show("Nodo no encontrado en el Arbol", "Error de Busqueda");
+
+        }
+
+        public void buscar2(int x, Nodo_Arbol t)
+        {
+            if (x < t.info)
+            {
+                if (t.Izquierdo == null)
+                {
+                    MessageBox.Show("Nodo no encontrado en el Arbol ");
+                }
+
+                else
+                    buscar2(x, t.Izquierdo);
+                    MessageBox.Show("Nodo encontrado en el Arbol " + x);
+            }
+            else if (x > t.info)
+            {
+                if (t.Derecho == null)
+                {
+                    MessageBox.Show("Nodo no encontrado en el Arbol ");
+                }
+
+                else
+                    buscar2(x, t.Derecho);
+                MessageBox.Show("Nodo encontrado en el Arbol " + x);
+            }
         }
 
         // Funciones para el dibujo de los nodos del Arbol Binario en el formulario
@@ -327,25 +424,5 @@ namespace Arbol_Binario
                 Derecho.DibujarNodo(grafo, fuente, Relleno, RellenoFuente, Lapiz, encuentro);
             }
         }
-
-        //Funcion para dar color al Arbol Binario
-        public void colorear (Graphics grafo, Font fuente, Brush Relleno, Brush RellenoFuente, Pen Lapiz) // QUITE ENCUENTRO
-        {
-            //Dibuja en contorno del nodo
-            Rectangle rect = new Rectangle((int)(CoordenadaX - Radio / 2), (int)(CoordenadaY - Radio / 2), Radio, Radio);
-            // prueba = new Rectangle((int)(CoordenadaX - Radio / 2), (int)(CoordenadaY - Radio / 2), Radio, Radio);
-
-            grafo.FillEllipse(Relleno, rect);
-            grafo.DrawEllipse(Lapiz, rect);
-
-            //Dibuja el nombre
-            StringFormat formato = new StringFormat();
-
-            formato.Alignment = StringAlignment.Center;
-            formato.LineAlignment = StringAlignment.Center;
-            grafo.DrawString(info.ToString(), fuente, RellenoFuente, CoordenadaX, CoordenadaY, formato);
-        }
-
-
     }
 }

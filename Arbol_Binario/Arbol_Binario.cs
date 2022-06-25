@@ -13,8 +13,11 @@ namespace Arbol_Binario
     {
         public Nodo_Arbol Raiz;
         public Nodo_Arbol aux;
+        int h = 0;
+        int s = 0;
 
-        
+
+
 
         //Constructor por defecto
         public Arbol_Binario()
@@ -37,7 +40,7 @@ namespace Arbol_Binario
                 Raiz.nivel = 0;
             }
             else
-                Raiz = Raiz.Insertar(x, Raiz, Raiz.nivel);
+                Raiz = Raiz.Insertar(x, Raiz, Raiz.nivel, Raiz.altura);
         }
 
         //Funcion para eliminar un nodo (valor) del Arbol Binario
@@ -49,13 +52,27 @@ namespace Arbol_Binario
                 Raiz.Eliminar(x, ref Raiz);
         }
 
+        public void Buscar (int x)
+        {
+            Raiz.buscar(x, Raiz);
+        }
+        public void Altura()
+        {
+            MessageBox.Show("La altura es: " + Raiz.alturaABB(ref Raiz, ref h));
+        }
+
+        public void Suma()
+        {
+            MessageBox.Show("La altura es: " + Raiz.Suma(ref Raiz, ref s));
+        }
+
         //Funciones para el dibujo del arbol binario en el formulario
 
         //Funcion que dibuja el arbol binario 
         public void DibujarArbol (Graphics grafo, Font fuente, Brush Relleno, Brush RellenoFuente, Pen Lapiz, Brush encuentro)
         {
-            int x = 400; //Posiciones de la raiz del arbol
-            int y = 75;
+            int x = 520; //Posiciones de la raiz del arbol
+            int y = 65;
 
             if (Raiz == null) return;
 
@@ -64,50 +81,6 @@ namespace Arbol_Binario
             Raiz.DibujarRamas(grafo, Lapiz); //Dibujar los enlaces entre los nodos
 
             Raiz.DibujarNodo(grafo, fuente, Relleno, RellenoFuente, Lapiz, encuentro);
-        }
-
-        //public int x1 = 400; //Posiciones iniciales de la raiz del arbol
-       // public int y2 = 75;
-        public void colorear (Graphics grafo, Font fuente, Brush Relleno, Brush RellenoFuente, Pen Lapiz, Nodo_Arbol Raiz, bool post, bool inor, bool preor)
-        {
-            Brush entorno = Brushes.Red;
-
-            if (inor == true)
-            {
-                if (Raiz != null)
-                {
-                    colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.Izquierdo, post, inor, preor);
-                    Raiz.colorear(grafo, fuente, entorno, RellenoFuente, Lapiz);
-                    Thread.Sleep(1000); // pausar la ejecucion 100 milisegundos
-                    Raiz.colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz);
-                    colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.Derecho, post, inor, preor);
-                }
-            }
-
-            else if (preor == true)
-            {
-                if (Raiz != null)
-                {
-                    Raiz.colorear(grafo, fuente, entorno, RellenoFuente, Lapiz);
-                    Thread.Sleep(1000); // pausar la ejecucion 100 milisegundos
-                    Raiz.colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz);
-                    colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.Izquierdo, post, inor, preor);
-                    colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.Derecho, post, inor, preor);
-
-                }
-            }
-
-            else if (post == true)
-            {
-                if (Raiz != null)
-                {
-                    colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.Izquierdo, post, inor, preor);
-                    colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.Derecho, post, inor, preor);
-                    Raiz.colorear(grafo, fuente, entorno, RellenoFuente, Lapiz);
-                    Thread.Sleep(1000); // pausar la ejecucion 100 milisegundos
-                    Raiz.colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz);
-                }
-            }
         }
     }
 }

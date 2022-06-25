@@ -22,6 +22,8 @@ namespace Arbol_Binario
         int cont = 0;
 
         Arbol_Binario mi_Arbol = new Arbol_Binario(null); // creacion del objeto arbol
+        //Nodo_Arbol mi_Arbol2 = new Nodo_Arbol(null); // creacion del objeto arbol
+
         Graphics g; //definicion del objeto grafico
 
         private void Form1_Paint(object sender, PaintEventArgs en)
@@ -31,7 +33,37 @@ namespace Arbol_Binario
             en.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             g = en.Graphics;
 
-            mi_Arbol.DibujarArbol(g, this.Font, Brushes.Blue, Brushes.White, Pens.Black, Brushes.White);
+            mi_Arbol.DibujarArbol(g, this.Font, Brushes.SeaGreen, Brushes.White, Pens.SeaGreen, Brushes.White);
+        }
+
+
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (TxtDato.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un dato");
+            }
+            else
+            {
+                Dato = int.Parse(TxtDato.Text);
+                if (Dato <= 0 || Dato >= 100)
+                {
+                    MessageBox.Show("Solo recibimos valores de 1 al 99");
+                }
+
+                else
+                {
+                    mi_Arbol.Eliminar(Dato);
+                    TxtDato.Clear();
+                    TxtDato.Focus();
+
+                    cont++;
+
+                    Refresh();
+                    Refresh();
+                }
+            }
         }
 
         private void BtnInsertar_Click(object sender, EventArgs e)
@@ -62,37 +94,31 @@ namespace Arbol_Binario
             }
         }
 
-        private void BtnEliminar_Click(object sender, EventArgs e)
+        private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            if (TxtDato2.Text == "")
+            if (TxtDato.Text == "")
             {
                 MessageBox.Show("Debe ingresar un dato");
             }
             else
             {
-                Dato = int.Parse(TxtDato2.Text);
-                if (Dato <= 0 || Dato >= 100)
-                {
-                    MessageBox.Show("Solo recibimos valores de 1 al 99");
-                }
-
-                else
-                {
-                    mi_Arbol.Eliminar(Dato);
-                    TxtDato.Clear();
-                    TxtDato.Focus();
-
-                    cont++;
-
-                    Refresh();
-                    Refresh();
-                }
+                Dato = int.Parse(TxtDato.Text);
+                mi_Arbol.Buscar(Dato);
+                TxtDato.Clear();
+                TxtDato.Focus();
             }
         }
 
-        private void TxtAltura_TextChanged(object sender, EventArgs e)
+        private void BtnAltura_Click(object sender, EventArgs e)
         {
+            mi_Arbol.Altura();
+            Refresh();
+        }
 
+        private void BtnSuma_Click(object sender, EventArgs e)
+        {
+            mi_Arbol.Suma();
+            Refresh();
         }
     }
 }
