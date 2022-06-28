@@ -33,8 +33,8 @@ namespace Arbol_Binario
             this.label1 = new System.Windows.Forms.Label();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnGame = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.AddBtn = new System.Windows.Forms.Button();
+            this.BtnAuthor = new System.Windows.Forms.Button();
+            this.BtnHelp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.PictureBox();
             this.btnMin = new System.Windows.Forms.PictureBox();
@@ -91,41 +91,43 @@ namespace Arbol_Binario
             this.BtnGame.UseVisualStyleBackColor = false;
             this.BtnGame.Click += new System.EventHandler(this.BtnGame_Click);
             // 
-            // button1
+            // BtnAuthor
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(421, 264);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 30);
-            this.button1.TabIndex = 124;
-            this.button1.Text = "Autor";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BtnAuthor.BackColor = System.Drawing.Color.Transparent;
+            this.BtnAuthor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAuthor.BackgroundImage")));
+            this.BtnAuthor.FlatAppearance.BorderSize = 0;
+            this.BtnAuthor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnAuthor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BtnAuthor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAuthor.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAuthor.ForeColor = System.Drawing.Color.White;
+            this.BtnAuthor.Location = new System.Drawing.Point(421, 264);
+            this.BtnAuthor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnAuthor.Name = "BtnAuthor";
+            this.BtnAuthor.Size = new System.Drawing.Size(160, 30);
+            this.BtnAuthor.TabIndex = 124;
+            this.BtnAuthor.Text = "Autor";
+            this.BtnAuthor.UseVisualStyleBackColor = false;
+            this.BtnAuthor.Click += new System.EventHandler(this.BtnAuthor_Click);
             // 
-            // AddBtn
+            // BtnHelp
             // 
-            this.AddBtn.BackColor = System.Drawing.Color.Transparent;
-            this.AddBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddBtn.BackgroundImage")));
-            this.AddBtn.FlatAppearance.BorderSize = 0;
-            this.AddBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.AddBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AddBtn.ForeColor = System.Drawing.Color.White;
-            this.AddBtn.Location = new System.Drawing.Point(255, 264);
-            this.AddBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(160, 30);
-            this.AddBtn.TabIndex = 123;
-            this.AddBtn.Text = "Ayuda";
-            this.AddBtn.UseVisualStyleBackColor = false;
+            this.BtnHelp.BackColor = System.Drawing.Color.Transparent;
+            this.BtnHelp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnHelp.BackgroundImage")));
+            this.BtnHelp.FlatAppearance.BorderSize = 0;
+            this.BtnHelp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BtnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnHelp.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnHelp.ForeColor = System.Drawing.Color.White;
+            this.BtnHelp.Location = new System.Drawing.Point(255, 264);
+            this.BtnHelp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnHelp.Name = "BtnHelp";
+            this.BtnHelp.Size = new System.Drawing.Size(160, 30);
+            this.BtnHelp.TabIndex = 123;
+            this.BtnHelp.Text = "Ayuda";
+            this.BtnHelp.UseVisualStyleBackColor = false;
+            this.BtnHelp.Click += new System.EventHandler(this.BtnHelp_Click);
             // 
             // panel1
             // 
@@ -171,8 +173,8 @@ namespace Arbol_Binario
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnGame);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.AddBtn);
+            this.Controls.Add(this.BtnAuthor);
+            this.Controls.Add(this.BtnHelp);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuForm";
@@ -189,8 +191,8 @@ namespace Arbol_Binario
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Button BtnGame;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button AddBtn;
+        private System.Windows.Forms.Button BtnAuthor;
+        private System.Windows.Forms.Button BtnHelp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox btnExit;
         private System.Windows.Forms.PictureBox btnMin;

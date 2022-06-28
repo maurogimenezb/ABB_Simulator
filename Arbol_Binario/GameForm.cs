@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+
 
 namespace Arbol_Binario
 {
     public partial class GameForm : Form
     {
+
         public GameForm()
         {
             InitializeComponent();
@@ -22,6 +25,8 @@ namespace Arbol_Binario
         int cont = 0;
 
         Arbol_Binario mi_Arbol = new Arbol_Binario(null); // creacion del objeto arbol
+        Nodo_Arbol Raiz = new Nodo_Arbol(); // creacion del objeto arbol
+
         //Nodo_Arbol mi_Arbol2 = new Nodo_Arbol(null); // creacion del objeto arbol
 
         Graphics g; //definicion del objeto grafico
@@ -55,6 +60,8 @@ namespace Arbol_Binario
                 else
                 {
                     mi_Arbol.Eliminar(Dato);
+                    SoundPlayer sonido = new SoundPlayer(@"C:/Users/mauro/source/repos/Arbol_Binario/Arbol_Binario/bin/Debug/Sonidos/sound_eliminar.wav");
+                    sonido.Play();
                     TxtDato.Clear();
                     TxtDato.Focus();
 
@@ -83,6 +90,8 @@ namespace Arbol_Binario
                 else
                 {
                     mi_Arbol.Insertar(Dato);
+                    SoundPlayer sonido = new SoundPlayer(@"C:/Users/mauro/source/repos/Arbol_Binario/Arbol_Binario/bin/Debug/Sonidos/sound_insertar.wav");
+                    sonido.Play();
                     TxtDato.Clear();
                     TxtDato.Focus();
 
@@ -111,14 +120,48 @@ namespace Arbol_Binario
 
         private void BtnAltura_Click(object sender, EventArgs e)
         {
+
+           // int h = 0;
+           // MessageBox.Show("La altura es: " + Raiz.alturaABB(ref Raiz, ref h));
             mi_Arbol.Altura();
-            Refresh();
+            //Refresh();
         }
 
         private void BtnSuma_Click(object sender, EventArgs e)
         {
             mi_Arbol.Suma();
-            Refresh();
+            // Refresh();
+        }
+
+        private void BtnMultiplos_Click(object sender, EventArgs e)
+        {
+            mi_Arbol.Multiplos();
+           // Refresh();
+        }
+
+        private void BtnRecorrido_Click(object sender, EventArgs e)
+        {
+            mi_Arbol.Recorrido();
+
+        }
+
+        private void BtnMayor_Click(object sender, EventArgs e)
+        {
+            mi_Arbol.Mayor();
+
+        }
+
+        private void BtnMenor_Click(object sender, EventArgs e)
+        {
+            mi_Arbol.Menor();
+
+        }
+
+        private void BtnMenu_Click(object sender, EventArgs e)
+        {
+            MenuForm MenuForm = new MenuForm();
+            MenuForm.Show();
+            this.Hide();
         }
     }
 }

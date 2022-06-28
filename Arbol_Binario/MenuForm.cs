@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+
 
 namespace Arbol_Binario
 {
@@ -15,6 +17,8 @@ namespace Arbol_Binario
         public MenuForm()
         {
             InitializeComponent();
+            SoundPlayer sonido = new SoundPlayer(@"C:/Users/mauro/source/repos/Arbol_Binario/Arbol_Binario/bin/Debug/Sonidos/sound_menu.wav");
+            sonido.Play();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -37,6 +41,20 @@ namespace Arbol_Binario
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BtnAuthor_Click(object sender, EventArgs e)
+        {
+            AuthorForm AuthorForm = new AuthorForm();
+            AuthorForm.Show();
+            this.Hide();
+        }
+
+        private void BtnHelp_Click(object sender, EventArgs e)
+        {
+            HelpForm HelpForm = new HelpForm();
+            HelpForm.Show();
+            this.Hide();
         }
     }
 }

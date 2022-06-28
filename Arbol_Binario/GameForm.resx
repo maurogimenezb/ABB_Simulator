@@ -111,7 +111,7 @@
         RU/SlSWhOyIc7bdUnS+PxtahFlfv2gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button5.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnRecorrido.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAAAeCAYAAADaW7vzAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
         EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABJmlDQ1BBZG9iZSBSR0IgKDE5OTgpAAAo
@@ -147,7 +147,7 @@
         RU/SlSWhOyIc7bdUnS+PxtahFlfv2gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnMenor.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAAAeCAYAAADaW7vzAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
         EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABJmlDQ1BBZG9iZSBSR0IgKDE5OTgpAAAo
@@ -165,7 +165,7 @@
         RU/SlSWhOyIc7bdUnS+PxtahFlfv2gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnMayor.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAAAeCAYAAADaW7vzAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
         EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABJmlDQ1BBZG9iZSBSR0IgKDE5OTgpAAAo
@@ -183,7 +183,7 @@
         RU/SlSWhOyIc7bdUnS+PxtahFlfv2gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnMultiplos.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAAAeCAYAAADaW7vzAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
         EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABJmlDQ1BBZG9iZSBSR0IgKDE5OTgpAAAo
@@ -253,6 +253,25 @@
         R+AHyYvuG3AEfpC86L4BR/AuLie6b8AR+HtIXnTfgCPwf0hedN+AI/APU3nRfQOO4EJcTnTfgCPYFde+
         M6H7BhzBjLj27QjdN+BYcCCuec8yJ3TbgGPBrPiXw+atCd21BscB5sWPMl6973CbQvfsg+MQ07Inj/Jg
         RU/SlSWhOyIc7bdUnS+PxtahFlfv2gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="BtnMenu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKAAAAAeCAYAAACrDxUoAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
+        EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABJmlDQ1BBZG9iZSBSR0IgKDE5OTgpAAAo
+        z2NgYDJwdHFyZRJgYMjNKykKcndSiIiMUmA/z8DGwMwABonJxQWOAQE+IHZefl4qAwb4do2BEURf1gWZ
+        xUAa4EouKCoB0n+A2CgltTiZgYHRAMjOLi8pAIozzgGyRZKywewNIHZRSJAzkH0EyOZLh7CvgNhJEPYT
+        ELsI6Akg+wtIfTqYzcQBNgfClgGxS1IrQPYyOOcXVBZlpmeUKBhaWloqOKbkJ6UqBFcWl6TmFit45iXn
+        FxXkFyWWpKYA1ULcBwaCEIWgENMAarTQZKAyAMUDhPU5EBy+jGJnEGIIkFxaVAZlMjIZE+YjzJgjwcDg
+        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAC4iAAAuIgGq4t2S
+        AAABp0lEQVR4Xu3bvS4EYRSHcRHNtuujI2pib0Wh0BAXQERCNEQlBBHfFD4qXIqKcA0qBQW1ZPxPspvM
+        nDmEZN/ZwlP8in33zEwxT3Z2dzJdWZYBHRMuRho7k2MyK5dyJy/yKRn+PevAerAurI85aUQdeeFii3bS
+        K4vyKNGBgZ88yZL0RX2ZcNFooxV5l2jHwF98yGrUWWlBg4Ny39wQaKcHGcr35uPrl9fmMJDCmwx8FyCf
+        fKiC/aboKQSohfHcAJDalA/wzA0AKR37AC/cAJDSkQ/wxA0AKe35ALkEo0qlAO0WSjQIpFC6BPMdEFUi
+        QHTUIQGik0oB8h0QVSpdgs/dAJDSgQ/w1A0AKfE/IDpq3wd45QaAlE59gGtuAEhp3Qc47AaAlEYLATYj
+        nHdDQAoLreYKARq9ueWGgXbazvdWiK9FQ9PCsyFoJ3sWZMa3VniRp+G6bIg9cBztEPgN62dT6lFnpQVP
+        G9bEPhFv5VmigwB51on1Yt3Uoq5awsXvaGfdMiITsiy7YveQr8UOeIN/w863nXc7/9aB9WBdWB/dUT+R
+        cBGoRtb1BcT3DBou/DS8AAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

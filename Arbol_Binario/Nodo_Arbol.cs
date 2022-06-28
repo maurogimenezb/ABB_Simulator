@@ -6,6 +6,8 @@ using System.Drawing; // Libreria para dibujar figuras geometricas
 using System.Windows.Forms;
 using System.Threading; //Libreria para manejo de Hilos
 using System.Threading.Tasks;
+using System.Media;
+
 
 namespace Arbol_Binario
 {
@@ -14,7 +16,7 @@ namespace Arbol_Binario
         public int info; // Dato a almacenar en el nodo
         public Nodo_Arbol Izquierdo; //Nodo izquierdo del arbol
         public Nodo_Arbol Derecho; //Nodo izquierdo del arbol
-        public Nodo_Arbol Padre;
+       // public Nodo_Arbol Padre;
         public int altura;
         public int nivel;
        // public Rectangle nodo; // Para dibujar el nodo del arbol
@@ -32,7 +34,7 @@ namespace Arbol_Binario
             info = nueva_info;
             Izquierdo = izquierdo;
             Derecho = derecho;
-            Padre = padre;
+           // Padre = padre;
             altura = 0;
         }
 
@@ -133,6 +135,7 @@ namespace Arbol_Binario
 
         public int Suma (ref Nodo_Arbol t, ref int s)
         {
+           // int s = 0;
             if (t != null)
             {
                 s += t.info;
@@ -140,6 +143,113 @@ namespace Arbol_Binario
                 Suma(ref t.Derecho, ref s);
             }
             return s;
+        }
+
+        public int Multiplox2 (ref Nodo_Arbol t, ref int sx2)
+        {
+            // int s = 0;
+            if (t != null)
+            {
+                if (t.info % 2 == 0)
+                {
+                    sx2 += t.info;
+                }
+
+                Multiplox2 (ref t.Izquierdo, ref sx2);
+                Multiplox2 (ref t.Derecho, ref sx2);
+            }
+            return sx2;
+        }
+
+        public int Multiplox3(ref Nodo_Arbol t, ref int sx3)
+        {
+            // int s = 0;
+            if (t != null)
+            {
+                if (t.info % 3 == 0)
+                {
+                    sx3 += t.info;
+                }
+
+                Multiplox3(ref t.Izquierdo, ref sx3);
+                Multiplox3(ref t.Derecho, ref sx3);
+            }
+            return sx3;
+        }
+
+        public int Multiplox5(ref Nodo_Arbol t, ref int sx5)
+        {
+            // int s = 0;
+            if (t != null)
+            {
+                if (t.info % 5 == 0)
+                {
+                    sx5 += t.info;
+                }
+
+                Multiplox5(ref t.Izquierdo, ref sx5);
+                Multiplox5(ref t.Derecho, ref sx5);
+            }
+            return sx5;
+        }
+
+        public string PosOrden(ref Nodo_Arbol t, ref string po)
+        {
+            //string po = "";
+            if (t != null)              
+            {
+                PosOrden(ref t.Izquierdo, ref po);
+                PosOrden(ref t.Derecho, ref po);
+               po += t.info.ToString() + ", ";
+            }
+
+            return po;
+        }
+
+        public string InOrden(ref Nodo_Arbol t, ref string io)
+        {
+            //string io = "";
+            if (t != null)
+            {
+                PosOrden(ref t.Izquierdo, ref io);
+                io += t.info.ToString() + ", ";
+                PosOrden(ref t.Derecho, ref io);
+            }
+
+            return io;
+        }
+
+        public string PreOrden(ref Nodo_Arbol t, ref string pro)
+        {
+            //string pro = "";
+            if (t != null)
+            {
+                pro += t.info.ToString() + ", ";
+                PosOrden(ref t.Izquierdo, ref pro);
+                PosOrden(ref t.Derecho, ref pro);
+            }
+
+            return pro;
+        }
+
+        public int Mayor(ref Nodo_Arbol t, ref int my)
+        {
+            if (t != null)
+            {
+                my = t.info;
+                Mayor(ref t.Derecho, ref my);
+            }
+            return my;
+        }
+
+        public int Menor(ref Nodo_Arbol t, ref int mn)
+        {
+            if (t != null)
+            {
+                mn = t.info;
+                Menor(ref t.Izquierdo, ref mn);
+            }
+            return mn;
         }
 
         //Funcion para eliminar un nodo del Arbol Binario
