@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Drawing; // Libreria para dibujar figuras geometricas
 using System.Windows.Forms;
-using System.Threading; //Libreria para manejo de Hilos
 using System.Threading.Tasks;
 
 namespace Arbol_Binario
@@ -12,18 +11,6 @@ namespace Arbol_Binario
     class Arbol_Binario
     {
         public Nodo_Arbol Raiz;
-        public Nodo_Arbol aux;
-       // int h = 0;
-        //int s = 0;
-
-
-
-
-        //Constructor por defecto
-        public Arbol_Binario()
-        {
-            aux = new Nodo_Arbol();
-        }
 
         // Constructor con parametros 
         public Arbol_Binario (Nodo_Arbol nueva_raiz)
@@ -31,23 +18,23 @@ namespace Arbol_Binario
             Raiz = nueva_raiz;
         }
          //Funcion para agregar un nuevo nodo
-
         public void Insertar (int x)
         {
             if (Raiz == null)
             {
-                Raiz = new Nodo_Arbol(x, null, null, null);
-                Raiz.nivel = 0;
+                Raiz = new Nodo_Arbol(x, null, null);
+                Raiz.altura = 0;
+
             }
             else
-                Raiz = Raiz.Insertar(x, Raiz, Raiz.nivel, Raiz.altura);
+                Raiz = Raiz.Insertar(x, Raiz, Raiz.altura);
         }
 
         //Funcion para eliminar un nodo (valor) del Arbol Binario
         public void Eliminar (int x)
         {
             if (Raiz == null)
-                Raiz = new Nodo_Arbol(x, null, null, null);
+                Raiz = new Nodo_Arbol(x, null, null);
             else
                 Raiz.Eliminar(x, ref Raiz);
         }
@@ -108,7 +95,8 @@ namespace Arbol_Binario
             else
             {
                 int smx2 = 0;
-                MessageBox.Show("La suma de multiplos de 2 es: " + Raiz.Multiplox2(ref Raiz, ref smx2));
+               // string sx2data = "";
+                MessageBox.Show("La suma de multiplos de 2 es: ", "Los mutiplos de 2 son: " + Raiz.Multiplox2(ref Raiz, ref smx2));
                 int smx3 = 0;
                 MessageBox.Show("La suma de multiplos de 3 es: " + Raiz.Multiplox3(ref Raiz, ref smx3));
                 int smx5 = 0;
@@ -140,12 +128,20 @@ namespace Arbol_Binario
                 MessageBox.Show("El nodo mayor es: " + Raiz.Menor(ref Raiz, ref mn));
         }
 
+        public void Valores ()
+        {
+            int x = 0;
+            int y;
+
+               // MessageBox.Show("El valor es es: " + Raiz.PosicionNodo(ref x, ref y));
+        }
+
         //Funciones para el dibujo del arbol binario en el formulario
 
         //Funcion que dibuja el arbol binario 
         public void DibujarArbol (Graphics grafo, Font fuente, Brush Relleno, Brush RellenoFuente, Pen Lapiz, Brush encuentro)
         {
-            int x = 500; //Posiciones de la raiz del arbol
+            int x = 450; //Posiciones de la raiz del arbol
             int y = 65;
 
             if (Raiz == null) return;

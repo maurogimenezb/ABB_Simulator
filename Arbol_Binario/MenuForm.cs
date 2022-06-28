@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
+using System.Media; // Libreria para reproducir los sonidos
 
 
 namespace Arbol_Binario
@@ -33,8 +33,8 @@ namespace Arbol_Binario
 
         private void BtnGame_Click(object sender, EventArgs e)
         {
-            GameForm GameForm = new GameForm();
-            GameForm.Show();
+            PersForm PersForm = new PersForm();
+            PersForm.Show();
             this.Hide();
         }
 

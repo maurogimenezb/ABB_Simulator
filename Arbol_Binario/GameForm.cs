@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
+using System.Media; // Libreria para reproducir los sonidos
 
 
 namespace Arbol_Binario
@@ -24,22 +24,45 @@ namespace Arbol_Binario
         int Dato = 0;
         int cont = 0;
 
+
         Arbol_Binario mi_Arbol = new Arbol_Binario(null); // creacion del objeto arbol
-        Nodo_Arbol Raiz = new Nodo_Arbol(); // creacion del objeto arbol
-
-        //Nodo_Arbol mi_Arbol2 = new Nodo_Arbol(null); // creacion del objeto arbol
-
         Graphics g; //definicion del objeto grafico
 
         private void Form1_Paint(object sender, PaintEventArgs en)
         {
-            en.Graphics.Clear(this.BackColor);
-            en.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
-            en.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            g = en.Graphics;
 
-            mi_Arbol.DibujarArbol(g, this.Font, Brushes.SeaGreen, Brushes.White, Pens.SeaGreen, Brushes.White);
+            if (OpPers.opcion == 1)
+            {
+                en.Graphics.Clear(this.BackColor);
+                en.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+                en.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                g = en.Graphics;
+
+                mi_Arbol.DibujarArbol(g, this.Font, Brushes.SeaGreen, Brushes.White, Pens.SeaGreen, Brushes.White);
+            }
+
+            else if (OpPers.opcion == 2)
+            {
+                en.Graphics.Clear(this.BackColor);
+                en.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+                en.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                g = en.Graphics;
+
+                mi_Arbol.DibujarArbol(g, this.Font, Brushes.Red, Brushes.White, Pens.Red, Brushes.White);
+            }
+
+            else if (OpPers.opcion == 3)
+            {
+                en.Graphics.Clear(this.BackColor);
+                en.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+                en.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                g = en.Graphics;
+
+                mi_Arbol.DibujarArbol(g, this.Font, Brushes.Blue, Brushes.White, Pens.Blue, Brushes.White);
+            }
+
         }
+
 
 
 
@@ -67,7 +90,6 @@ namespace Arbol_Binario
 
                     cont++;
 
-                    Refresh();
                     Refresh();
                 }
             }
@@ -97,7 +119,6 @@ namespace Arbol_Binario
 
                     cont++;
 
-                    Refresh();
                     Refresh();
                 }
             }
@@ -162,6 +183,16 @@ namespace Arbol_Binario
             MenuForm MenuForm = new MenuForm();
             MenuForm.Show();
             this.Hide();
+        }
+
+        private void BtnAtras_Click(object sender, EventArgs e)
+        {
+            PersForm PersForm = new PersForm();
+            PersForm.Show();
+            this.Hide();
+
+            SoundPlayer sonido = new SoundPlayer(@"C:/Users/mauro/source/repos/Arbol_Binario/Arbol_Binario/bin/Debug/Sonidos/sound_menu.wav");
+            sonido.Play();
         }
     }
 }

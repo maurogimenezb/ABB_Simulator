@@ -112,7 +112,7 @@ namespace Arbol_Binario
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(100, 30);
             this.BtnSalir.TabIndex = 146;
-            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.Text = "Menu";
             this.BtnSalir.UseVisualStyleBackColor = false;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 

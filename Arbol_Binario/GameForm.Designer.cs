@@ -47,8 +47,9 @@ namespace Arbol_Binario
             this.gboxMarcador = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BtnMenu = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BtnMenu = new System.Windows.Forms.Button();
+            this.BtnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             this.panel1.SuspendLayout();
@@ -323,25 +324,6 @@ namespace Arbol_Binario
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Operaciones directas";
             // 
-            // BtnMenu
-            // 
-            this.BtnMenu.BackColor = System.Drawing.Color.Transparent;
-            this.BtnMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnMenu.BackgroundImage")));
-            this.BtnMenu.FlatAppearance.BorderSize = 0;
-            this.BtnMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BtnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BtnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMenu.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnMenu.ForeColor = System.Drawing.Color.White;
-            this.BtnMenu.Location = new System.Drawing.Point(326, 413);
-            this.BtnMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnMenu.Name = "BtnMenu";
-            this.BtnMenu.Size = new System.Drawing.Size(160, 30);
-            this.BtnMenu.TabIndex = 138;
-            this.BtnMenu.Text = "Menu Principal";
-            this.BtnMenu.UseVisualStyleBackColor = false;
-            this.BtnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
@@ -356,14 +338,53 @@ namespace Arbol_Binario
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Arbol Binario";
             // 
+            // BtnMenu
+            // 
+            this.BtnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.BtnMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnMenu.BackgroundImage")));
+            this.BtnMenu.FlatAppearance.BorderSize = 0;
+            this.BtnMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BtnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMenu.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnMenu.ForeColor = System.Drawing.Color.White;
+            this.BtnMenu.Location = new System.Drawing.Point(688, 413);
+            this.BtnMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnMenu.Name = "BtnMenu";
+            this.BtnMenu.Size = new System.Drawing.Size(100, 30);
+            this.BtnMenu.TabIndex = 152;
+            this.BtnMenu.Text = "Menu";
+            this.BtnMenu.UseVisualStyleBackColor = false;
+            this.BtnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
+            // 
+            // BtnAtras
+            // 
+            this.BtnAtras.BackColor = System.Drawing.Color.Transparent;
+            this.BtnAtras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAtras.BackgroundImage")));
+            this.BtnAtras.FlatAppearance.BorderSize = 0;
+            this.BtnAtras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnAtras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BtnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAtras.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAtras.ForeColor = System.Drawing.Color.White;
+            this.BtnAtras.Location = new System.Drawing.Point(596, 413);
+            this.BtnAtras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnAtras.Name = "BtnAtras";
+            this.BtnAtras.Size = new System.Drawing.Size(100, 30);
+            this.BtnAtras.TabIndex = 153;
+            this.BtnAtras.Text = "Atras";
+            this.BtnAtras.UseVisualStyleBackColor = false;
+            this.BtnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.BtnAtras);
             this.Controls.Add(this.BtnMenu);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.gboxMarcador);
@@ -403,8 +424,9 @@ namespace Arbol_Binario
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button BtnBuscar;
-        private System.Windows.Forms.Button BtnMenu;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button BtnMenu;
+        private System.Windows.Forms.Button BtnAtras;
     }
 }
 

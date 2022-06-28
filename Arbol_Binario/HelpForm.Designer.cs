@@ -32,6 +32,7 @@ namespace Arbol_Binario
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpForm));
             this.BtnSalir = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BtnRecorrido = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@ namespace Arbol_Binario
             this.btnExit = new System.Windows.Forms.PictureBox();
             this.btnMin = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -73,7 +73,7 @@ namespace Arbol_Binario
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(100, 30);
             this.BtnSalir.TabIndex = 151;
-            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.Text = "Menu";
             this.BtnSalir.UseVisualStyleBackColor = false;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
@@ -89,10 +89,21 @@ namespace Arbol_Binario
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(493, 343);
+            this.groupBox2.Size = new System.Drawing.Size(493, 357);
             this.groupBox2.TabIndex = 150;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Como Funciona ?";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(20, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(460, 36);
+            this.label1.TabIndex = 145;
+            this.label1.Text = "Aca te mostramos que hace cada operacion, solo hay\r\nque darle click a una de ella" +
+    "s para obtener mas informacion";
             // 
             // groupBox1
             // 
@@ -100,7 +111,7 @@ namespace Arbol_Binario
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.groupBox1.Location = new System.Drawing.Point(6, 189);
+            this.groupBox1.Location = new System.Drawing.Point(6, 206);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -244,7 +255,7 @@ namespace Arbol_Binario
             this.gboxMarcador.Controls.Add(this.panel2);
             this.gboxMarcador.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.gboxMarcador.ForeColor = System.Drawing.Color.SeaGreen;
-            this.gboxMarcador.Location = new System.Drawing.Point(6, 72);
+            this.gboxMarcador.Location = new System.Drawing.Point(6, 89);
             this.gboxMarcador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gboxMarcador.Name = "gboxMarcador";
             this.gboxMarcador.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -353,15 +364,6 @@ namespace Arbol_Binario
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 450);
             this.panel1.TabIndex = 147;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(439, 23);
-            this.label1.TabIndex = 145;
-            this.label1.Text = "¡CLICK EN EL BOTON PARA MAS INFORMACION!";
             // 
             // HelpForm
             // 

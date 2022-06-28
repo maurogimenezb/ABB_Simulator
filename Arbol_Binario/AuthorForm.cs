@@ -7,18 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
+using System.Media; // Libreria para reproducir los sonidos
 
 
 namespace Arbol_Binario
 {
     public partial class AuthorForm : Form
     {
+
         public AuthorForm()
         {
+
             InitializeComponent();
-            SoundPlayer sonido = new SoundPlayer(@"C:/Users/mauro/source/repos/Arbol_Binario/Arbol_Binario/bin/Debug/Sonidos/sound_menu.wav");
-            sonido.Play();
+            //SoundPlayer sonido = new SoundPlayer(@"C:/Users/mauro/source/repos/Arbol_Binario/Arbol_Binario/bin/Debug/Sonidos/sound_menu.wav");
+           // sonido.Play();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

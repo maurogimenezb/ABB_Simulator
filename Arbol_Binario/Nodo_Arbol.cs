@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Drawing; // Libreria para dibujar figuras geometricas
 using System.Windows.Forms;
-using System.Threading; //Libreria para manejo de Hilos
 using System.Threading.Tasks;
-using System.Media;
+using System.Media; // Libreria para reproducir los sonidos
 
 
 namespace Arbol_Binario
@@ -16,55 +15,37 @@ namespace Arbol_Binario
         public int info; // Dato a almacenar en el nodo
         public Nodo_Arbol Izquierdo; //Nodo izquierdo del arbol
         public Nodo_Arbol Derecho; //Nodo izquierdo del arbol
-       // public Nodo_Arbol Padre;
-        public int altura;
-        public int nivel;
-       // public Rectangle nodo; // Para dibujar el nodo del arbol
+        public int altura; // Variable para ir guardando la altura del arbol segun su nivel
 
-        private Arbol_Binario arbol;
-
-        public Arbol_Binario Arbol
-        {
-            get { return arbol;}
-            set { arbol = value;}
-        } 
-
-        public Nodo_Arbol(int nueva_info, Nodo_Arbol izquierdo, Nodo_Arbol derecho, Nodo_Arbol padre)
+        public Nodo_Arbol(int nueva_info, Nodo_Arbol izquierdo, Nodo_Arbol derecho)
         {
             info = nueva_info;
             Izquierdo = izquierdo;
             Derecho = derecho;
-           // Padre = padre;
             altura = 0;
         }
 
-        public Nodo_Arbol() // Constructor por defecto
-        {
-        }
-
         //Funcion para insertar un nodo en el Arbol
-        public Nodo_Arbol Insertar (int x, Nodo_Arbol t, int Level, int Altura)
+        public Nodo_Arbol Insertar (int x, Nodo_Arbol t, int Altura)
         {
             if (t==null)
             {
-                t = new Nodo_Arbol(x, null, null, null);
-                t.nivel = Level;
+                t = new Nodo_Arbol(x, null, null);
+               // t.nivel = Level;
                 t.altura = Altura;
 
             }
             else if (x<t.info) //Si el valor a insertar es menor que la raiz
             {
-                Level++;
                 Altura++;
-                t.Izquierdo = Insertar(x, t.Izquierdo, Level, Altura);
+                t.Izquierdo = Insertar(x, t.Izquierdo, Altura);
 
 
             }
             else if (x > t.info) //Si el valor a insertar es mayor que la raiz
             {
-                Level++;
                 Altura++;
-                t.Derecho = Insertar(x, t.Derecho, Level, Altura);
+                t.Derecho = Insertar(x, t.Derecho, Altura);
 
             }
 
@@ -83,7 +64,7 @@ namespace Arbol_Binario
 
                 if (t.Izquierdo == null)
                 {
-                    t = new Nodo_Arbol(x, null, null, null);
+                    t = new Nodo_Arbol(x, null, null);
                   //  t.nivel = Level;
                   //  t.altura = Altura;
                 }
@@ -98,7 +79,7 @@ namespace Arbol_Binario
             {
                 if (t.Derecho == null)
                 {
-                    t = new Nodo_Arbol(x, null, null, null);
+                    t = new Nodo_Arbol(x, null, null);
                   //  t.nivel = Level;
                   //  t.altura = Altura;
                 }
@@ -153,12 +134,32 @@ namespace Arbol_Binario
                 if (t.info % 2 == 0)
                 {
                     sx2 += t.info;
+                   // dx2 += t.info.ToString() + ", ";
+
                 }
 
                 Multiplox2 (ref t.Izquierdo, ref sx2);
                 Multiplox2 (ref t.Derecho, ref sx2);
             }
             return sx2;
+        }
+
+        public string Mx2Data(ref Nodo_Arbol t, ref string dx2)
+        {
+            // int s = 0;
+            if (t != null)
+            {
+                if (t.info % 2 == 0)
+                {
+                    //sx2 += t.info;
+                    dx2 += t.info.ToString() + ", ";
+
+                }
+
+                Mx2Data (ref t.Izquierdo, ref dx2);
+                Mx2Data (ref t.Derecho, ref dx2);
+            }
+            return dx2;
         }
 
         public int Multiplox3(ref Nodo_Arbol t, ref int sx3)
@@ -377,7 +378,7 @@ namespace Arbol_Binario
             
             else
             {
-                MessageBox.Show("Nodo no Existente en el Arbol", "Error de Eliminacion");
+                MessageBox.Show("No existe nodo en el arbol");
             }
         } // Final de la funcion eliminar
 
@@ -404,7 +405,7 @@ namespace Arbol_Binario
             }
 
             else
-                MessageBox.Show("Nodo no encontrado en el Arbol", "Error de Busqueda");
+                MessageBox.Show("Nodo no encontrado en el Arbol");
 
         }
 
