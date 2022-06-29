@@ -41,7 +41,13 @@ namespace Arbol_Binario
 
         public void Buscar (int x)
         {
-            Raiz.buscar2(x, Raiz);
+
+            if (Raiz == null)
+            {
+                Raiz = new Nodo_Arbol(x, null, null);
+            }
+            else
+                Raiz.buscar2(x, Raiz);
         }
         public void Altura()
         {
@@ -128,13 +134,13 @@ namespace Arbol_Binario
                 MessageBox.Show("El nodo mayor es: " + Raiz.Menor(ref Raiz, ref mn));
         }
 
-        public void Valores ()
-        {
-            int x = 0;
-            int y;
+       // public void Valores ()
+       // {
+        //    int x = 0;
+       //     int y;
 
                // MessageBox.Show("El valor es es: " + Raiz.PosicionNodo(ref x, ref y));
-        }
+       // }
 
         //Funciones para el dibujo del arbol binario en el formulario
 
