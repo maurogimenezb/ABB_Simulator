@@ -47,7 +47,9 @@ namespace Arbol_Binario
                 Raiz = new Nodo_Arbol(x, null, null);
             }
             else
-                Raiz.buscar2(x, Raiz);
+            {
+                Raiz.buscar(x, Raiz);
+            }
         }
         public void Altura()
         {
@@ -55,10 +57,15 @@ namespace Arbol_Binario
 
             if (Raiz == null)
             {
-                MessageBox.Show("No existe arbol");
+                ErrorForm ErrorForm = new ErrorForm();
+                ErrorForm.Show();
             }
             else
-            MessageBox.Show("La altura es: " + Raiz.alturaABB(ref Raiz, ref h));
+            {
+                ExtrasData.altura = Raiz.alturaABB(ref Raiz, ref h);
+                AlturaForm AlturaForm = new AlturaForm();
+                AlturaForm.Show();
+            }
         }
 
         public void Suma()
@@ -66,27 +73,40 @@ namespace Arbol_Binario
             int s = 0;
             if (Raiz == null)
             {
-                MessageBox.Show("No existe arbol");
+                ErrorForm ErrorForm = new ErrorForm();
+                ErrorForm.Show();
             }
+
             else
-            MessageBox.Show("La suma total es: " + Raiz.Suma(ref Raiz, ref s));
+            {
+                SumaDato.suma = Raiz.Suma(ref Raiz, ref s);
+                SumaForm SumaForm = new SumaForm();
+                SumaForm.Show();
+            }
+
         }
 
         public void Recorrido ()
         {
             if (Raiz == null)
             {
-                MessageBox.Show("No existe arbol");
+                ErrorForm ErrorForm = new ErrorForm();
+                ErrorForm.Show();
             }
 
             else
             {
                 string po = "";
-                MessageBox.Show("El recorrido Posorder es: " + Raiz.PosOrden(ref Raiz, ref po));
-                string io = "";
-                MessageBox.Show("El recorrido Inorder es: " + Raiz.InOrden(ref Raiz, ref io));
-                string pro = "";
-                MessageBox.Show("El recorrido Preorder es: " + Raiz.PreOrden(ref Raiz, ref pro));
+                RecoData.posorden = Raiz.PosOrden(ref Raiz, ref po);
+
+                string ino = "";
+                RecoData.inorden = Raiz.InOrden(ref Raiz, ref ino);
+
+                string pre = "";
+                RecoData.preorden = Raiz.PreOrden(ref Raiz, ref pre);
+
+                RecoForm RecoForm = new RecoForm();
+                RecoForm.Show();
             }
         }
 
@@ -95,19 +115,33 @@ namespace Arbol_Binario
 
             if (Raiz == null)
             {
-                MessageBox.Show("No existe arbol");
+                ErrorForm ErrorForm = new ErrorForm();
+                ErrorForm.Show();
             }
 
             else
             {
+               string sx2data = "";
+                MultiplosData.datax2 = Raiz.Mx2Data(ref Raiz, ref sx2data);
+
                 int smx2 = 0;
-               // string sx2data = "";
-                MessageBox.Show("La suma de multiplos de 2 es: ", "Los mutiplos de 2 son: " + Raiz.Multiplox2(ref Raiz, ref smx2));
+                MultiplosData.sumax2 = Raiz.Multiplox2(ref Raiz, ref smx2);
+
+                string sx3data = "";
+                MultiplosData.datax3 = Raiz.Mx3Data(ref Raiz, ref sx3data);
+
                 int smx3 = 0;
-                MessageBox.Show("La suma de multiplos de 3 es: " + Raiz.Multiplox3(ref Raiz, ref smx3));
+                MultiplosData.sumax3 = Raiz.Multiplox3(ref Raiz, ref smx3);
+
+                string sx5data = "";
+                MultiplosData.datax5 = Raiz.Mx5Data(ref Raiz, ref sx5data);
+
                 int smx5 = 0;
-                MessageBox.Show("La suma de multiplos de 5 es: " + Raiz.Multiplox5(ref Raiz, ref smx5));
-            }
+                MultiplosData.sumax5 = Raiz.Multiplox5(ref Raiz, ref smx5);
+
+                Mx2Form Mx2Form = new Mx2Form();
+                Mx2Form.Show(); 
+             }
         }
 
         public void Mayor ()
@@ -115,11 +149,16 @@ namespace Arbol_Binario
             int my = 0;
             if (Raiz == null)
             {
-                MessageBox.Show("No existe arbol");
+                ErrorForm ErrorForm = new ErrorForm();
+                ErrorForm.Show();
             }
 
             else
-                MessageBox.Show("El nodo mayor es: " + Raiz.Mayor(ref Raiz, ref my));
+            {
+                ExtrasData.mayor = Raiz.Mayor(ref Raiz, ref my);
+                MayorForm MayorForm = new MayorForm();
+                MayorForm.Show();
+            }
         }
 
         public void Menor()
@@ -127,11 +166,16 @@ namespace Arbol_Binario
             int mn = 0;
             if (Raiz == null)
             {
-                MessageBox.Show("No existe arbol");
+                ErrorForm ErrorForm = new ErrorForm();
+                ErrorForm.Show();
             }
 
             else
-                MessageBox.Show("El nodo mayor es: " + Raiz.Menor(ref Raiz, ref mn));
+            {
+                ExtrasData.menor = Raiz.Menor(ref Raiz, ref mn);
+                MenorForm MenorForm = new MenorForm();
+                MenorForm.Show();
+            }
         }
 
        // public void Valores ()

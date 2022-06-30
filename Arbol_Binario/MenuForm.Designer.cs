@@ -30,7 +30,6 @@ namespace Arbol_Binario
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
-            this.label1 = new System.Windows.Forms.Label();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnGame = new System.Windows.Forms.Button();
             this.BtnAuthor = new System.Windows.Forms.Button();
@@ -38,20 +37,12 @@ namespace Arbol_Binario
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.PictureBox();
             this.btnMin = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label1.Location = new System.Drawing.Point(382, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(320, 60);
-            this.label1.TabIndex = 127;
-            this.label1.Text = "Menu Principal";
             // 
             // BtnSalir
             // 
@@ -63,7 +54,7 @@ namespace Arbol_Binario
             this.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalir.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnSalir.ForeColor = System.Drawing.Color.White;
-            this.BtnSalir.Location = new System.Drawing.Point(557, 169);
+            this.BtnSalir.Location = new System.Drawing.Point(303, 124);
             this.BtnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(160, 30);
@@ -82,7 +73,7 @@ namespace Arbol_Binario
             this.BtnGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGame.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnGame.ForeColor = System.Drawing.Color.White;
-            this.BtnGame.Location = new System.Drawing.Point(345, 169);
+            this.BtnGame.Location = new System.Drawing.Point(89, 124);
             this.BtnGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnGame.Name = "BtnGame";
             this.BtnGame.Size = new System.Drawing.Size(160, 30);
@@ -101,7 +92,7 @@ namespace Arbol_Binario
             this.BtnAuthor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAuthor.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAuthor.ForeColor = System.Drawing.Color.White;
-            this.BtnAuthor.Location = new System.Drawing.Point(421, 264);
+            this.BtnAuthor.Location = new System.Drawing.Point(172, 219);
             this.BtnAuthor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnAuthor.Name = "BtnAuthor";
             this.BtnAuthor.Size = new System.Drawing.Size(160, 30);
@@ -120,7 +111,7 @@ namespace Arbol_Binario
             this.BtnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHelp.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnHelp.ForeColor = System.Drawing.Color.White;
-            this.BtnHelp.Location = new System.Drawing.Point(255, 264);
+            this.BtnHelp.Location = new System.Drawing.Point(6, 219);
             this.BtnHelp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnHelp.Name = "BtnHelp";
             this.BtnHelp.Size = new System.Drawing.Size(160, 30);
@@ -161,6 +152,34 @@ namespace Arbol_Binario
             this.btnMin.TabStop = false;
             this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.BtnGame);
+            this.groupBox1.Controls.Add(this.BtnSalir);
+            this.groupBox1.Controls.Add(this.BtnHelp);
+            this.groupBox1.Controls.Add(this.BtnAuthor);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.groupBox1.Location = new System.Drawing.Point(255, 46);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(533, 292);
+            this.groupBox1.TabIndex = 146;
+            this.groupBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label1.Location = new System.Drawing.Point(422, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(246, 38);
+            this.label1.TabIndex = 147;
+            this.label1.Text = "Menu Principal";
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -168,13 +187,10 @@ namespace Arbol_Binario
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnMin);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.BtnSalir);
-            this.Controls.Add(this.BtnGame);
-            this.Controls.Add(this.BtnAuthor);
-            this.Controls.Add(this.BtnHelp);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuForm";
@@ -182,13 +198,13 @@ namespace Arbol_Binario
             this.Text = "MenuForm";
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Button BtnGame;
         private System.Windows.Forms.Button BtnAuthor;
@@ -196,5 +212,7 @@ namespace Arbol_Binario
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox btnExit;
         private System.Windows.Forms.PictureBox btnMin;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -15,6 +15,7 @@ namespace Arbol_Binario
     public partial class GameForm : Form
     {
 
+
         public GameForm()
         {
             InitializeComponent();
@@ -22,9 +23,6 @@ namespace Arbol_Binario
 
         // Declaracion de variables a utilizar
         int Dato = 0;
-        int cont = 0;
-
-
         Arbol_Binario mi_Arbol = new Arbol_Binario(null); // creacion del objeto arbol
         Graphics g; //definicion del objeto grafico
 
@@ -70,28 +68,19 @@ namespace Arbol_Binario
         {
             if (TxtDato.Text == "")
             {
-                MessageBox.Show("Debe ingresar un dato");
+                DatoForm DatoForm = new DatoForm();
+                DatoForm.Show();
             }
             else
             {
                 Dato = int.Parse(TxtDato.Text);
-                if (Dato <= 0 || Dato >= 100)
-                {
-                    MessageBox.Show("Solo recibimos valores de 1 al 99");
-                }
 
-                else
-                {
-                    mi_Arbol.Eliminar(Dato);
+                mi_Arbol.Eliminar(Dato);
                     SoundPlayer sonido = new SoundPlayer(@"C:/Users/mauro/source/repos/Arbol_Binario/Arbol_Binario/bin/Debug/Sonidos/sound_eliminar.wav");
                     sonido.Play();
                     TxtDato.Clear();
-                    TxtDato.Focus();
-
-                    cont++;
-
+                    //TxtDato.Focus();
                     Refresh();
-                }
             }
         }
 
@@ -99,28 +88,20 @@ namespace Arbol_Binario
         {
             if (TxtDato.Text == "")
             {
-                MessageBox.Show("Debe ingresar un dato");
+                DatoForm DatoForm = new DatoForm();
+                DatoForm.Show();
             }
+
             else
             {
                 Dato = int.Parse(TxtDato.Text);
-                if (Dato <= 0 || Dato >= 100)
-                {
-                    MessageBox.Show("Solo recibimos valores de 1 al 99");
-                }
 
-                else
-                {
                     mi_Arbol.Insertar(Dato);
                     SoundPlayer sonido = new SoundPlayer(@"C:/Users/mauro/source/repos/Arbol_Binario/Arbol_Binario/bin/Debug/Sonidos/sound_insertar.wav");
                     sonido.Play();
                     TxtDato.Clear();
-                    TxtDato.Focus();
-
-                    cont++;
-
+                   // TxtDato.Focus();
                     Refresh();
-                }
             }
         }
 
@@ -128,14 +109,15 @@ namespace Arbol_Binario
         {
             if (TxtDato.Text == "")
             {
-                MessageBox.Show("Debe ingresar un dato");
+                DatoForm DatoForm = new DatoForm();
+                DatoForm.Show();
             }
             else
             {
                 Dato = int.Parse(TxtDato.Text);
                 mi_Arbol.Buscar(Dato);
                 TxtDato.Clear();
-                TxtDato.Focus();
+                //TxtDato.Focus();
             }
         }
 

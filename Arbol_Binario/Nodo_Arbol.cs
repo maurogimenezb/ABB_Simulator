@@ -31,7 +31,6 @@ namespace Arbol_Binario
             if (t==null)
             {
                 t = new Nodo_Arbol(x, null, null);
-               // t.nivel = Level;
                 t.altura = Altura;
 
             }
@@ -51,7 +50,8 @@ namespace Arbol_Binario
 
             else
             {
-                MessageBox.Show("Dato existente en el arbol", "Error de ingreso");
+                ErrorForm2 ErrorForm2 = new ErrorForm2();
+                ErrorForm2.Show();
             }
             return t;
         }
@@ -103,9 +103,10 @@ namespace Arbol_Binario
             return t == null ? -1 : t.altura;
         }
 
+        //Funcion para calcular la altura
         public int alturaABB (ref Nodo_Arbol t, ref int h)
         {
-            if (t != null)
+            if (t != null) 
             {
                 h = Alturas(t);
                 alturaABB(ref t.Izquierdo, ref h); 
@@ -178,6 +179,24 @@ namespace Arbol_Binario
             return sx3;
         }
 
+        public string Mx3Data(ref Nodo_Arbol t, ref string dx3)
+        {
+            // int s = 0;
+            if (t != null)
+            {
+                if (t.info % 3 == 0)
+                {
+                    //sx2 += t.info;
+                    dx3 += t.info.ToString() + ", ";
+
+                }
+
+                Mx3Data(ref t.Izquierdo, ref dx3);
+                Mx3Data(ref t.Derecho, ref dx3);
+            }
+            return dx3;
+        }
+
         public int Multiplox5(ref Nodo_Arbol t, ref int sx5)
         {
             // int s = 0;
@@ -192,6 +211,24 @@ namespace Arbol_Binario
                 Multiplox5(ref t.Derecho, ref sx5);
             }
             return sx5;
+        }
+
+        public string Mx5Data(ref Nodo_Arbol t, ref string dx5)
+        {
+            // int s = 0;
+            if (t != null)
+            {
+                if (t.info % 5 == 0)
+                {
+                    //sx2 += t.info;
+                    dx5 += t.info.ToString() + ", ";
+
+                }
+
+                Mx3Data(ref t.Izquierdo, ref dx5);
+                Mx3Data(ref t.Derecho, ref dx5);
+            }
+            return dx5;
         }
 
         public string PosOrden(ref Nodo_Arbol t, ref string po)
@@ -378,7 +415,8 @@ namespace Arbol_Binario
             
             else
             {
-                MessageBox.Show("No existe nodo en el arbol");
+                ErrorForm ErrorForm = new ErrorForm();
+                ErrorForm.Show();
             }
         } // Final de la funcion eliminar
 
@@ -390,7 +428,11 @@ namespace Arbol_Binario
                 if (x < t.info)
                 {
                     buscar(x, t.Izquierdo);
-                    MessageBox.Show("Nodo encontrado en el Arbol " + x);
+
+                    ExtrasData.buscar = x;
+                    BuscarForm BuscarForm = new BuscarForm();
+                    BuscarForm.Show();
+                    // MessageBox.Show("Nodo encontrado en el Arbol " + x);
 
                 }
 
@@ -399,14 +441,18 @@ namespace Arbol_Binario
                     if (x > t.info)
                     {
                         buscar(x, t.Derecho);
-                        MessageBox.Show("Nodo encontrado en el Arbol " + x);
+                        ExtrasData.buscar = x;
+                        BuscarForm BuscarForm = new BuscarForm();
+                        BuscarForm.Show();
                     }
                 }
             }
 
             else
-                MessageBox.Show("Nodo no encontrado en el Arbol");
-
+            {
+                ErrorForm ErrorForm = new ErrorForm();
+                ErrorForm.Show();
+            }
         }
 
         public void buscar2(int x, Nodo_Arbol t)
@@ -415,23 +461,31 @@ namespace Arbol_Binario
             {
                 if (t.Izquierdo == null)
                 {
-                    MessageBox.Show("Nodo no encontrado en el Arbol ");
+                    ErrorForm ErrorForm = new ErrorForm();
+                    ErrorForm.Show();
                 }
 
                 else
                     buscar2(x, t.Izquierdo);
-                    MessageBox.Show("Nodo encontrado en el Arbol " + x);
+
+                ExtrasData.buscar = x;
+                BuscarForm BuscarForm = new BuscarForm();
+                BuscarForm.Show();
             }
             else if (x > t.info)
             {
                 if (t.Derecho == null)
                 {
-                    MessageBox.Show("Nodo no encontrado en el Arbol ");
+                    ErrorForm ErrorForm = new ErrorForm();
+                    ErrorForm.Show();
                 }
 
                 else
                     buscar2(x, t.Derecho);
-                MessageBox.Show("Nodo encontrado en el Arbol " + x);
+
+                ExtrasData.buscar = x;
+                BuscarForm BuscarForm = new BuscarForm();
+                BuscarForm.Show();
             }
         }
 
