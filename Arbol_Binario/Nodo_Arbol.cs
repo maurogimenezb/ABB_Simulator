@@ -15,36 +15,42 @@ namespace Arbol_Binario
         public int info; // Dato a almacenar en el nodo
         public Nodo_Arbol Izquierdo; //Nodo izquierdo del arbol
         public Nodo_Arbol Derecho; //Nodo izquierdo del arbol
-        public int altura; // Variable para ir guardando la altura del arbol segun su nivel
+        public int hizquierda; // Variable para ir guardando la altura del arbol segun su nivel
+        public int hderecha; // Variable para ir guardando la altura del arbol segun su nivel
+
 
         public Nodo_Arbol(int nueva_info, Nodo_Arbol izquierdo, Nodo_Arbol derecho)
         {
             info = nueva_info;
             Izquierdo = izquierdo;
             Derecho = derecho;
-            altura = 0;
+            hizquierda = 0;
+            hderecha = 0;
+
         }
 
         //Funcion para insertar un nodo en el Arbol
-        public Nodo_Arbol Insertar (int x, Nodo_Arbol t, int Altura)
+        public Nodo_Arbol Insertar (int x, Nodo_Arbol t, int HIzquierda, int HDerecha)
         {
             if (t==null)
             {
                 t = new Nodo_Arbol(x, null, null);
-                t.altura = Altura;
+                t.hizquierda = HIzquierda;
+                t.hderecha = HDerecha;
+
 
             }
             else if (x<t.info) //Si el valor a insertar es menor que la raiz
             {
-                Altura++;
-                t.Izquierdo = Insertar(x, t.Izquierdo, Altura);
+                HIzquierda++;
+                t.Izquierdo = Insertar(x, t.Izquierdo, HIzquierda, HDerecha);
 
 
             }
             else if (x > t.info) //Si el valor a insertar es mayor que la raiz
             {
-                Altura++;
-                t.Derecho = Insertar(x, t.Derecho, Altura);
+                HDerecha++;
+                t.Derecho = Insertar(x, t.Derecho, HIzquierda, HDerecha);
 
             }
 
@@ -100,7 +106,16 @@ namespace Arbol_Binario
         //Funcion para calcular la altura de un nodo en el Arbol
         public static int Alturas (Nodo_Arbol t)
         {
-            return t == null ? -1 : t.altura;
+            //int hmax;
+            if (t.hizquierda > t.hderecha)
+            {
+                return t == null ? -1 : t.hizquierda;
+            }
+
+            else
+            {
+                return t == null ? -1 : t.hderecha;
+            }
         }
 
         //Funcion para calcular la altura
@@ -109,7 +124,7 @@ namespace Arbol_Binario
             if (t != null) 
             {
                 h = Alturas(t);
-                alturaABB(ref t.Izquierdo, ref h); 
+                alturaABB(ref t.Izquierdo, ref h);
                 alturaABB(ref t.Derecho, ref h);
             }
             return h;
@@ -225,8 +240,8 @@ namespace Arbol_Binario
 
                 }
 
-                Mx3Data(ref t.Izquierdo, ref dx5);
-                Mx3Data(ref t.Derecho, ref dx5);
+                Mx5Data(ref t.Izquierdo, ref dx5);
+                Mx5Data(ref t.Derecho, ref dx5);
             }
             return dx5;
         }

@@ -23,11 +23,13 @@ namespace Arbol_Binario
             if (Raiz == null)
             {
                 Raiz = new Nodo_Arbol(x, null, null);
-                Raiz.altura = 0;
+                Raiz.hizquierda = 0;
+                Raiz.hderecha = 0;
+
 
             }
             else
-                Raiz = Raiz.Insertar(x, Raiz, Raiz.altura);
+                Raiz = Raiz.Insertar(x, Raiz, Raiz.hizquierda, Raiz.hderecha);
         }
 
         //Funcion para eliminar un nodo (valor) del Arbol Binario
